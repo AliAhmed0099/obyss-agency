@@ -1,14 +1,28 @@
+@font-face {
+    font-family: Plain-light;
+    src: url(plain-light-webfont.ttf);
+ 
+}
+
+@font-face {
+    font-family: Silk-Serif;
+    src: url(silkserif-regularitalic-webfont.ttf);
+    
+}
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Plain Light";
+    font-family: "Plain-light";
     color: #fff;
 }
 
 html, body {
     height: 100%;
     width: 100%;
+    cursor: none;
 }
 
 :root{
@@ -21,6 +35,21 @@ html, body {
      /* Text Colors */
 
     --text-primary-color:#FFFFFF;
+    
+      /* border Colors */
+    --border-primary-color:#ffffffd3;
+}
+
+#crsr{
+    height: 2vw;
+    width: 2vw;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 999;
+    border: 2px solid var(--border-primary-color);
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+
 }
 
 #loader{
@@ -42,7 +71,7 @@ html, body {
 #line-part1 h5,#line-part1 h6{
     font-size: 3vw;
     font-weight: 300;
-    font-family: 'silk serif';
+    font-family: "Silk-Serif";
 }
 
 #line-part1 h5{
@@ -81,28 +110,28 @@ html, body {
 
 @keyframes anime{
     0%{
-        font-family: "Plain Light";
+        font-family: "Plain-light";
         -webkit-text-stroke: 1px var(--text-primary-color);
         color:var(--text-primary-color);
         font-weight: 500;
         opacity: 1;
     }
      47%{
-        font-family: "Plain Light";
+        font-family: "Plain-light";
         -webkit-text-stroke: 1px var(--text-primary-color);
         color:var(--text-primary-color);
         font-weight: 500;
         opacity: 0;
     }
      50%{
-        font-family: "silk serif";
+        font-family: "Silk-Serif";
         -webkit-text-stroke: 1px var(--text-primary-color);
         color:transparent;
         font-weight: 500;
         opacity: 1;
     }
      110%{
-        font-family: "silk serif";
+        font-family: "Silk-Serif";
         -webkit-text-stroke: 1px var(--text-primary-color);
         color:transparent;
         font-weight: 500;
@@ -119,5 +148,59 @@ html, body {
     height: 100vh;
     width: 100%;
     background-color: var(--background-color);
+    
 }
 
+#page1 #nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.4vw 5.5vw;
+}
+
+#nav #nav-part2{
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+
+#nav #nav-part2 h4{
+    font-size: 1vw;
+    font-weight: 500;
+}
+.hero{
+    /* background-color: red; */
+    height: fit-content;
+    width: 77%;
+    margin-left: 23%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+    position: relative;
+}
+.hero:nth-child(2){
+    margin-top: 15vh;
+}
+.hero h1{
+    font-size: 7.2vw;
+    text-transform: uppercase;
+    line-height: 7.3vw;
+    font-weight: 600;
+
+}
+
+.hero h2{
+    font-size: 7.2vw;
+    text-transform: uppercase;
+    line-height: 7.3vw;
+    font-weight: 600;
+
+}
+
+.hero h2:hover{
+    -webkit-text-stroke: 2px var(--text-primary-color);
+    color:transparent;
+    font-weight: 500;
+
+}
