@@ -31,6 +31,7 @@ html, body {
     --background-color:#151515;
     --background-reload-color:#030303;
     --background-main-color:#030303;
+    --background-div-color:#3F7DF4;
 
      /* Text Colors */
 
@@ -145,7 +146,7 @@ html, body {
 
 #main{
     position: relative;
-    background-color: var(--background-main-color);
+    background-color:var(--background-color)
 }
 
 #page1{
@@ -267,3 +268,156 @@ background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-20
     object-fit: cover;
 }
 
+#page3{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: #333232;
+}
+
+#page4{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: var(--background-color);
+    padding-top: 5vh;
+}
+#page4-content{
+    width:70vw;
+    margin-left: 29%;
+    position: relative;
+}
+#page4-content h1{
+    font-size: 7vw;
+    text-transform: uppercase;
+    
+}
+
+#page4-content .underline{
+    height: 1.4px;
+    width: 100%;
+    background-color: var(--text-primary-color);
+    margin: 5vw 0;
+}
+
+#page4-content>p{
+    font-size: 2.1vw;
+    width: 50%;
+    margin-bottom: 5vw;
+}
+
+#page4-flex{
+    display: flex;
+}
+#page4-flex img{
+    width: 48%;
+}
+
+#page4-flex p{
+    font-size: 1.0vw;
+    width: 20%;
+    margin-left: 2vw;
+    
+}
+#blue-div{
+    background-color:var(--background-div-color);
+    width: 33vw;
+    padding: 3vw;
+    position: relative;
+    margin-top: -28vh;
+    margin-left: 24vw;
+}
+.blue-div-elem{
+    padding: 2vw 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--border-primary-color);
+}
+
+.blue-div-elem h4{
+    font-size: 1.5vw;
+    font-weight: 500;
+
+}
+
+.blue-div-elem p{
+    font-size: 1vw;
+    width: 40%;
+}
+
+
+#page5{
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--background-color);
+    padding:5vw 0 ;
+}
+
+.elem{
+    overflow-x: hidden;
+    white-space: nowrap;
+    margin-bottom: -2vw;
+
+}
+.elem2{
+    overflow-x: hidden;
+    white-space: nowrap;
+  margin-bottom: -2vw;
+}
+
+#page5 .elem h1{
+ font-size: 7vw;
+ -webkit-text-stroke: 1px var(--text-primary-color);
+ color: transparent;
+ text-transform: uppercase;
+ font-weight: 100;
+ display: inline-block;
+ /* background-color: red; */
+ margin-right: 16px;
+ animation-name: anime;
+ animation-duration: 12s;
+ animation-timing-function: linear;
+ animation-iteration-count: infinite;
+    }
+
+    #page5 .elem2 h1{
+ font-size: 7vw;
+ -webkit-text-stroke: 1px var(--text-primary-color);
+ color: transparent;
+ text-transform: uppercase;
+ font-weight: 100;
+
+ display: inline-block;
+ /* background-color: red; */
+ margin-right: 16px;
+ transform: translateX(calc(-100% - 20px));
+ animation-name: anime;
+ animation-duration: 12s;
+ animation-timing-function: linear;
+ animation-iteration-count: infinite;
+ animation-direction: reverse;
+    }
+
+
+
+@keyframes anime{
+from{
+transform: translateX(0);
+}
+to{
+   transform: translateX(calc(-100% - 20px));
+}
+}    
+
+.elem span{
+    font-style: italic;
+    font-family: "Silk-Serif";
+    color: transparent;
+}
+
+.elem2 span{
+    font-style: italic;
+    font-family: "Silk-Serif";
+    color: transparent;
+}
