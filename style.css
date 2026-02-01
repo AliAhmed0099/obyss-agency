@@ -107,13 +107,14 @@ html, body {
     text-transform: uppercase;
     font-weight: 800;
     opacity: 0;
+    
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
 
 
 
-@keyframes anime{
+@keyframes loadingAnime{
     0%{
         font-family: "Plain-light";
         -webkit-text-stroke: 1px var(--text-primary-color);
@@ -286,8 +287,60 @@ background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-20
     min-height: 100vh;
     width: 100%;
     position: relative;
-    background-color: #333232;
+    background-color: var(--background-color);
+     padding: 15vh 02vw;
+     margin-bottom: 15vh;
+
 }
+
+#page3 h1{
+    font-size: 7vw;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: 28vw;
+    
+}
+
+#page3 h1::before{
+    content: "02";
+    font-size: 3vw;
+    font-weight: 100;
+    position: absolute;
+    font-family: "Silk-Serif";
+    left: -12%;
+    top: 7%;
+}
+
+
+#page3 .underline{
+    height: 1.4px;
+    width: 65%;
+    background-color: var(--text-primary-color);
+    margin: 5vw 0;
+    margin-left: 27vw;
+}
+
+#img-div-container{
+    background-color: red;
+    padding: 1vw;
+    position: relative;
+}
+
+.img-div{
+height: 37vw;
+width: 25vw;
+position: relative;
+overflow: hidden;
+background-color: gray;
+}
+
+.img-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 
 #page4{
     min-height: 100vh;
@@ -319,7 +372,7 @@ background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-20
 
 #page4-content .underline{
     height: 1.4px;
-    width: 100%;
+    width: 90%;
     background-color: var(--text-primary-color);
     margin: 5vw 0;
 }
