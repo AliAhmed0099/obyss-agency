@@ -59,7 +59,7 @@ onStart:function(){
       h5.innerHTML = grow;
       clearInterval(interval);
     }
-  }, 33);
+  }, 27);
 }
 });
 
@@ -71,14 +71,14 @@ tl.to(".line h2",{
 
 tl.to("#loader",{
     opacity:0,
-    duration:0.3,
-    delay:0.2,
+    duration:0.2,
+    delay:2.4,
 })
 
 tl.from("#page1",{
     y:1600,
     opacity:0,
-    delay:0.2,
+    delay:0.1,
     duration:0.5,   
     ease:Power4,    
 })
@@ -108,12 +108,130 @@ gsap.to("#crsr",{
     Shery.makeMagnet("#nav-part2 h4");
 
 
- }
+    // video container cursor 
+
+   
+   
+    var videoContainer=document.querySelector("#video-container");
+    var video=document.querySelector("#video-container video");
+    videoContainer.addEventListener("mouseenter",function(){
+      videoContainer.addEventListener("mousemove",function(dets){
+      
+      gsap.to("#crsr",{
+        scale:0,
+      })
+        gsap.to("#video-cursor",{
+            left:dets.x - 570,
+            top:dets.y -300,
+          })
+      })
+    })
+
+    videoContainer.addEventListener("mouseleave",function(){
+      gsap.to("#crsr",{
+        scale:1,
+      })
+       gsap.to("#video-cursor",{
+            left:"70%",
+            top:"-10%",
+          })
+
+    })
+
+  var flag=0
+ videoContainer.addEventListener("click",function(){
+
+
+  if(flag==0){
+  video.play();
+  video.style.opacity=1;
+  document.querySelector("#video-cursor").innerHTML=`<i class="ri-pause-mini-line"></i>`;
+  gsap.to("#video-cursor",{
+    scale:0.5,
+  })
+  flag=1;
+  }
+  else{
+    video.pause();
+  video.style.opacity=0;
+  document.querySelector("#video-cursor").innerHTML=`<i class="ri-play-mini-line"></i>`;
+  gsap.to("#video-cursor",{
+    scale:1,
+  })
+  flag=0;
+  }
+ })
+  }
+
+
+  function flagAnimation(){
+ document.addEventListener("mousemove",function(dets){
+    gsap.to("#flag",{
+      x:dets.x,
+      y:dets.y,
+    })
+  })
+
+  document.querySelector("#hero3").addEventListener("mouseenter",function(){
+    gsap.to("#flag",{
+      opacity:1,
+    })
+  })
+
+  
+  document.querySelector("#hero3").addEventListener("mouseleave",function(){
+    gsap.to("#flag",{
+      opacity:0,
+    })
+  })
+  }
+
+ function footerAnimation() {
+
+    var clutter = ""
+  var clutter2 = ""
+  document.querySelector("#footer h1").textContent.split("").forEach(function (elem) {
+    clutter += `<span>${elem}</span>`
+  })
+  document.querySelector("#footer h1").innerHTML = clutter
+  document.querySelector("#footer h2").textContent.split("").forEach(function (elem) {
+    clutter2 += `<span>${elem}</span>`
+  })
+  document.querySelector("#footer h2").innerHTML = clutter2
+
+
+  document.querySelector("#footer-text").addEventListener("mouseenter", function () {
+    gsap.to("#footer h1 span", {
+      opacity: 0,
+      stagger: 0.05
+    })
+    gsap.to("#footer h2 span", {
+      delay: 0.35,
+      opacity: 1,
+      stagger: 0.1
+    })
+  })
+  document.querySelector("#footer-text").addEventListener("mouseleave", function () {
+    gsap.to("#footer h1 span", {
+      opacity: 1,
+      stagger: 0.1,
+      delay: 0.35,
+
+    })
+    gsap.to("#footer h2 span", {
+      opacity: 0,
+      stagger: 0.05
+    })
+  })
+}
 
 
 
 
-  loadingAnimation();
-  cursorAnimation();
 locomotiveScroll();
+flagAnimation();
+  loadingAnimation();
+  footerAnimation();
+  cursorAnimation();
+
 
